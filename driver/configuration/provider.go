@@ -76,6 +76,7 @@ type Provider interface {
 	SelfServiceRegistrationBeforeHooks() []SelfServiceHook
 	SelfServiceLoginAfterHooks(strategy string) []SelfServiceHook
 	SelfServiceRegistrationAfterHooks(strategy string) []SelfServiceHook
+	SelfServiceProfileManagementAfterHooks(strategy string) []SelfServiceHook
 	SelfServiceLogoutRedirectURL() *url.URL
 	SelfServiceVerificationLinkLifespan() time.Duration
 	SelfServicePrivilegedSessionMaxAge() time.Duration

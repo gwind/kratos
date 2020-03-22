@@ -59,6 +59,7 @@ const (
 	ViperKeySelfServiceLifespanRegistrationRequest   = "selfservice.registration.request_lifespan"
 	ViperKeySelfServiceLoginBeforeConfig             = "selfservice.login.before"
 	ViperKeySelfServiceLoginAfterConfig              = "selfservice.login.after"
+	ViperKeySelfServiceProfileManagementAfterConfig  = "selfservice.profile_management.after"
 	ViperKeySelfServiceLifespanLoginRequest          = "selfservice.login.request_lifespan"
 	ViperKeySelfServiceLogoutRedirectURL             = "selfservice.logout.redirect_to"
 	ViperKeySelfServiceLifespanProfileRequest        = "selfservice.profile.request_lifespan"
@@ -195,6 +196,10 @@ func (p *ViperProvider) selfServiceHooks(key string) []SelfServiceHook {
 
 func (p *ViperProvider) SelfServiceLoginAfterHooks(strategy string) []SelfServiceHook {
 	return p.selfServiceHooks(ViperKeySelfServiceLoginAfterConfig + "." + strategy)
+}
+
+func (p *ViperProvider) SelfServiceProfileManagementAfterHooks(strategy string) []SelfServiceHook {
+	return p.selfServiceHooks(ViperKeySelfServiceProfileManagementAfterConfig + "." + strategy)
 }
 
 func (p *ViperProvider) SelfServiceRegistrationAfterHooks(strategy string) []SelfServiceHook {
