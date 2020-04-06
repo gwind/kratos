@@ -11,9 +11,9 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ProfileRequestForm profile request form
-// swagger:model profileRequestForm
-type ProfileRequestForm struct {
+// SettingsRequestMethod settings request method
+// swagger:model settingsRequestMethod
+type SettingsRequestMethod struct {
 
 	// config
 	Config *RequestMethodConfig `json:"config,omitempty"`
@@ -22,8 +22,8 @@ type ProfileRequestForm struct {
 	Method string `json:"method,omitempty"`
 }
 
-// Validate validates this profile request form
-func (m *ProfileRequestForm) Validate(formats strfmt.Registry) error {
+// Validate validates this settings request method
+func (m *SettingsRequestMethod) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateConfig(formats); err != nil {
@@ -36,7 +36,7 @@ func (m *ProfileRequestForm) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *ProfileRequestForm) validateConfig(formats strfmt.Registry) error {
+func (m *SettingsRequestMethod) validateConfig(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Config) { // not required
 		return nil
@@ -55,7 +55,7 @@ func (m *ProfileRequestForm) validateConfig(formats strfmt.Registry) error {
 }
 
 // MarshalBinary interface implementation
-func (m *ProfileRequestForm) MarshalBinary() ([]byte, error) {
+func (m *SettingsRequestMethod) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -63,8 +63,8 @@ func (m *ProfileRequestForm) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ProfileRequestForm) UnmarshalBinary(b []byte) error {
-	var res ProfileRequestForm
+func (m *SettingsRequestMethod) UnmarshalBinary(b []byte) error {
+	var res SettingsRequestMethod
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

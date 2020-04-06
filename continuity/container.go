@@ -4,9 +4,10 @@ import (
 	"time"
 
 	"github.com/gofrs/uuid"
+	"github.com/pkg/errors"
+
 	"github.com/ory/herodot"
 	"github.com/ory/x/sqlxx"
-	"github.com/pkg/errors"
 
 	"github.com/ory/kratos/x"
 )

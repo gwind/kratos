@@ -6,10 +6,11 @@ import (
 	"time"
 
 	"github.com/gofrs/uuid"
-	"github.com/ory/x/sqlcon"
-	"github.com/ory/x/sqlxx"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+
+	"github.com/ory/x/sqlcon"
+	"github.com/ory/x/sqlxx"
 
 	"github.com/ory/kratos/identity"
 	"github.com/ory/kratos/x"
@@ -39,7 +40,7 @@ func TestPersister(p interface {
 		m := sqlxx.JSONRawMessage(`{"foo":"bar"}`)
 		return Container{Name: "foo", IdentityID: x.PointToUUID(createIdentity(t).ID),
 			ExpiresAt: time.Now().Add(time.Hour).UTC().Truncate(time.Second),
-			Payload:  m,
+			Payload:   m,
 		}
 	}
 
